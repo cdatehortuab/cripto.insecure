@@ -1,12 +1,13 @@
 <?php
 
-class User extends CriptoObject {
+class User extends AbstractObject {
 	
 	protected $id;
 	protected $name;
 	protected $username;
 	protected $password;
 	protected $email;
+	protected $image;
 	protected $birthday;
 
 	public function jsonSerialize() {
@@ -16,6 +17,7 @@ class User extends CriptoObject {
 			'username' => $this->username,
 			'password' => $this->password,
 			'email' => $this->email,
+			'image' => $this->image,
 			'birthday' => $this->birthday
 			);
 	}
