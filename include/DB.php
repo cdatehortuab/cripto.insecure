@@ -7,7 +7,7 @@ class DB {
 
 	private function __construct() {
 		$this->cn = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DBNAME, MYSQL_PORT);
-		$this->cn->query('SET NAMES utf-8');
+		$this->cn->query('SET NAMES utf8');
 	}
 
 	private function get_data($operation) {		
@@ -34,6 +34,12 @@ class DB {
 				
 				case "all":
 					$query = "SELECT * FROM user";
+					break;
+
+				case "login":
+					$username = $data['username'];
+					$password = $data['password'];
+					$query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
 					break;
 				
 				default:
@@ -117,9 +123,9 @@ class DB {
 	}
 
 	public static function getInstance() {
-		if ($instance == NULL) {
-			$instance = new DB();
+		if (self::$instance == NULL) {
+			self::$instance = new DB();
 		}
-		return $instance;
+		return self::$instance;
 	}
 }

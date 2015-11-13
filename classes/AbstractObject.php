@@ -1,7 +1,7 @@
 <?php
 require(PATH_GLOBAL."include/DB.php");
 
-abstract class CriptoObject implements JsonSerializable {
+abstract class AbstractObject implements JsonSerializable {
 
 	public function __construct(stdClass $data = NULL) {
 		if ($data != NULL) {
@@ -14,11 +14,11 @@ abstract class CriptoObject implements JsonSerializable {
 		}
 	}
 
-	public function __get(string $attr) {
+	public function __get($attr) {
 		return $this->$attr;
 	}
 
-	public function __set(string $attr, mixed $value) {
+	public function __set($attr, $value) {
 		$this->$attr = $value;
 	}
 
