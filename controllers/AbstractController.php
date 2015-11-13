@@ -26,6 +26,8 @@ abstract class AbstractController {
 		$viewsNames = func_get_args();
 
 		$this->assign('session', $this->session);
+		if (!isset($this->varsView['title']))
+			$this->varsView['title'] = "Mi Aplicación";
 		foreach ($this->varsView as $var => $value) {
 			$$var = $value;
 		}

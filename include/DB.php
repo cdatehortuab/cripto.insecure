@@ -59,13 +59,16 @@ class DB {
 			switch ($case) {
 				
 				case "normal":
-					$id = $object->id;
 					$name = $object->name;
 					$username = $object->username;
 					$password = $object->password;
 					$email = $object->email;
+					$image = $object->image;
 					$birthday = $object->birthday;
-					$query = "INSERT INTO user (id, name, username, password, email, birthday) VALUES ('$id', '$name', '$username', '$password', '$email', '$birthday');";
+					if ($image == NULL)
+						$query = "INSERT INTO user (name, username, password, email, birthday) VALUES ('$name', '$username', '$password', '$email', '$birthday');";
+					else
+						$query = "INSERT INTO user (name, username, password, email, birthday, image) VALUES ('$name', '$username', '$password', '$email', '$birthday', '$image');";
 					break;
 				
 				default:

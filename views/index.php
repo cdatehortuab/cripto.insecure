@@ -13,7 +13,7 @@
 					<input class="form-control" id="password" type="password" name="password" placeholder="Password" required>
 				</div>
 				<button class="btn btn-primary btn-lg" type="submit">Login</button>
-				<a class="btn btn-primary btn-lg" href="index.php/register" role="button">Registrar</a>
+				<a class="btn btn-primary btn-lg" href="<?php echo LINK_GLOBAL; ?>index.php/register" role="button">Registrar</a>
 			</form>
 		</div>
 	</div>

@@ -44,7 +44,7 @@
 						</p>
 					</li>
 					<li>
-						<img src="<?php echo LINK_GLOBAL.$session['user']['image']; ?>" height="40px" width="40px" />
+						<img src="<?php echo LINK_GLOBAL.$session['user']['image']; ?>" height="50px" width="50px" />
 					</li>
 				</ul>
 				<?php } ?>
