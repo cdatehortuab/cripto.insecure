@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo LINK_GLOBAL; ?>css/bootstrap-theme.css">
 
 	<script type="text/javascript" src="<?php echo LINK_GLOBAL; ?>js/jquery-2.1.4.js"></script>
-	<!--<script type="text/javascript" src="<?php echo LINK_GLOBAL; ?>js/angular.js"></script>-->
 	<script type="text/javascript" src="<?php echo LINK_GLOBAL; ?>js/bootstrap.js"></script>
 </head>
 <body>

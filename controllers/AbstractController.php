@@ -2,6 +2,7 @@
 
 abstract class AbstractController {
 
+	protected $get;
 	protected $post;
 	protected $files;
 	protected $session;
@@ -11,12 +12,14 @@ abstract class AbstractController {
 	private $varsView;
 
 	public function __construct() {
+		$this->get = $_GET;
 		$this->post = $_POST;
 		$this->files = $_FILES;
 		$this->session = &$_SESSION;
 		$this->auxView = 'empty';
 		$this->auxView2 = 'empty';
 		$this->auxView3 = 'empty';
+		settype($this->get, 'object');
 		settype($this->post, 'object');
 		settype($this->files,'object');
 		$this->varsView = array();
