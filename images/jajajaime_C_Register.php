@@ -32,30 +32,13 @@ class C_Register extends AbstractController {
 				}
 			}
 		}
-
 		$user = new User($this->post);
-		if (empty($this->post->password2) || $user->password != $this->post->password2) {
-			$this->assign('user', $user);
+		$user->insert();
+		if ($this->auxView != 'message') {
 			$this->auxView = 'message';
-			$this->assign('type_msg', 'danger');
-			$this->assign('message', "Las contraseñas no coinciden");
-		} else {
-			$val = $user->validate();
-			if ($val['status']) {
-				$user->insert();
-				if ($this->auxView != 'message') {
-					$this->auxView = 'message';
-					$this->assign('type_msg', 'success');
-					$this->assign('message', "Usuario registrado correctamente");
-				}
-			} else {
-				$this->assign('user', $user);
-				$this->auxView = 'message';
-				$this->assign('type_msg', 'danger');
-				$this->assign('message', $val['message']);
-			}
+			$this->assign('type_msg', 'success');
+			$this->assign('message', "Usuario registrado correctamente");
 		}
-		
 		$this->index();
 	}
 }

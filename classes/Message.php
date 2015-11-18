@@ -17,6 +17,13 @@ class Message extends AbstractObject {
 			'to_user' => $this->to_user
 			);
 	}
+
+	public function validate() {
+		if (empty($this->subject) || empty($this->message) || empty($this->to_user) || empty($this->from_user)) {
+			return array('status' => false, 'message' => "Hay campos obligatorios incompletos");
+		}
+		return array('status'=> true);
+	}
 }
 
 ?>
