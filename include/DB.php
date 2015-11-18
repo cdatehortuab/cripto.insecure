@@ -119,6 +119,7 @@ class DB {
 				default:
 					break;
 			}
+			break;
 
 			case "Message":
 			switch ($case) {
@@ -133,6 +134,7 @@ class DB {
 				default:
 					break;
 			}
+			break;
 		}
 		$this->do_operation($query, $class);
 	}

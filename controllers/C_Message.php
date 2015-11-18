@@ -14,11 +14,20 @@ class C_Message extends AbstractController {
 	public function sendMessage() {
 		$this->post->from_user = $this->session['user']['id'];
 		$message = new Message($this->post);
-		$message->insert();
-		$this->auxView = 'message';
-		$this->assign('type_msg', 'success');
-		$this->assign('message', "Mensaje Enviado");
-		$this->index();
+		$val = $message->validate();
+		if ($val['status']) {
+			$message->insert();
+			$this->auxView = 'message';
+			$this->assign('type_msg', 'success');
+			$this->assign('message', "Mensaje Enviado");
+			$this->index();
+		} else {
+			$this->assign('msg', $message);
+			$this->auxView = 'message';
+			$this->assign('type_msg', 'danger');
+			$this->assign('message', $val['message']);
+			$this->send();
+		}
 	}
 
 	public function send() {
