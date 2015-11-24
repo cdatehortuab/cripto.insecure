@@ -12,9 +12,9 @@ define('VIEWS_PATH', PATH_GLOBAL.'views/');
 define('CLASSES_PATH', PATH_GLOBAL.'classes/');
 
 define('MYSQL_HOST', 'sql5.freemysqlhosting.net');
-define('MYSQL_USER', 'sql596310');
-define('MYSQL_PASS', 'eN2*iL7%');
-define('MYSQL_DBNAME', 'sql596310');
+define('MYSQL_USER', 'sql597507');
+define('MYSQL_PASS', 'zM7*lL7%');
+define('MYSQL_DBNAME', 'sql597507');
 define('MYSQL_PORT', 3306);
 
 function autoload($class_name) {
